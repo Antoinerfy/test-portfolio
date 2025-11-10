@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <script>
+  // Applique le thème avant que la page ne se peigne (évite le flash)
+  (function () {
+    var saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+
   </head>
   <body>
     <header class="site-header">
@@ -177,23 +185,27 @@
     });
   </script>
 <script>
-  const btn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
+  (function(){
+    const root = document.documentElement;
+    const btn  = document.getElementById('theme-toggle');
 
-  // Charger le thème sauvegardé ou sombre par défaut
-  const saved = localStorage.getItem('theme') || 'dark';
-  root.dataset.theme = saved;
-  btn.textContent = saved === 'light' ? '🌙' : '☀️';
+    function setTheme(theme){
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      // Icône : si on est en light, on propose la lune (pour aller en dark)
+      btn.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
 
-  // Basculer le thème
-  btn.addEventListener('click', () => {
-    const current = root.dataset.theme;
-    const next = current === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    localStorage.setItem('theme', next);
-    btn.textContent = next === 'light' ? '🌙' : '☀️';
-  });
+    // Thème initial déjà mis dans <head>, on synchronise juste l’icône
+    setTheme(root.getAttribute('data-theme') || 'dark');
+
+    btn.addEventListener('click', ()=>{
+      const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+      setTheme(next);
+    });
+  })();
 </script>
+
 
     </body>
 </html>
