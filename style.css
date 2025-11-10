@@ -170,7 +170,6 @@ body{
 
 /* Bouton clair/sombre à droite */
 .nav .theme-toggle {
-  margin-left: 3rem; /* pousse le bouton à droite */
   background: transparent;
   border: none;
   font-size: 1.3rem;
@@ -232,4 +231,56 @@ body{
     display: block;
   }
 }
+/* --- Header: positionnement nav + bouton --- */
+.header-inner{
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* brand | espace flexible | nav+bouton */
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-group{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;         /* <— nav et bouton restent sur UNE seule ligne */
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;           /* <— les liens peuvent revenir à la ligne entre eux si besoin */
+  min-width: 0;              /* évite de pousser le bouton à la ligne */
+}
+
+.nav a{
+  white-space: nowrap;       /* chaque lien ne casse pas en 2 mots */
+}
+
+.theme-toggle{
+  flex: 0 0 auto;            /* le bouton ne rétrécit pas et reste à droite */
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .2s, color .2s;
+  margin-left: 0;            /* au cas où un ancien style mettait auto */
+}
+
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  color: var(--accent);
+}
+
+/* Mobile : cacher la nav mais garder le bouton visible */
+@media (max-width: 640px){
+  .nav{ display: none; }
+  .theme-toggle{ display: block; }
+}
+
 
