@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon Portfolio — BTS SIO SISR</title>
+    <meta name="description" content="Portfolio technique — Projets, compétences, et parcours." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo">🛠️</span>
+          <a href="#" class="brand-name">Mon Portfolio</a>
+        </div>
+        <nav class="nav">
+          <a href="#accueil">Accueil</a>
+          <a href="#projets">Projets</a>
+          <a href="#competences">Compétences</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="accueil" class="hero container">
+        <h1>Bonjour, je suis <span class="accent">Étudiant BTS SIO SISR</span></h1>
+        <p>Passionné par les systèmes, réseaux et la sécurité. Je conçois, déploie et administre des infrastructures.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projets">Voir mes projets</a>
+          <a class="btn" href="CV.pdf" download>Mon CV (PDF)</a>
+        </div>
+      </section>
+
+      <section id="projets" class="section container">
+        <h2>Projets sélectionnés</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Lab de virtualisation — XYZ</h3>
+            <p>Évaluation des performances d'une infrastructure virtuelle : Proxmox/VMware, monitoring, bench CPU/RAM/IO.</p>
+            <ul class="tags">
+              <li>Proxmox</li><li>VMware</li><li>Zabbix</li><li>Linux</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn tiny" href="#" target="_blank" rel="noopener">Code/Docs</a>
+              <a class="btn tiny outline" href="#" target="_blank" rel="noopener">Rapport</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Maquettage réseau — XYZ</h3>
+            <p>Subdivision 131.129.0.0/16 en 5 VLANs/SSO, routage inter-VLAN avec 3 routeurs Cisco, plan d’adressage & ACL.</p>
+            <ul class="tags">
+              <li>Cisco IOS</li><li>VLAN</li><li>OSPF</li><li>ACL</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn tiny" href="#" target="_blank" rel="noopener">Packet Tracer</a>
+              <a class="btn tiny outline" href="#" target="_blank" rel="noopener">Diagramme</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Site vitrine sécurisé</h3>
+            <p>Déploiement Nginx + Let's Encrypt, durcissement TLS, CI/CD GitHub, supervision basique.</p>
+            <ul class="tags">
+              <li>Nginx</li><li>Linux</li><li>CI/CD</li><li>HTTPS</li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn tiny" href="#" target="_blank" rel="noopener">Repo</a>
+              <a class="btn tiny outline" href="#" target="_blank" rel="noopener">Live</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="competences" class="section container">
+        <h2>Compétences</h2>
+        <div class="skills">
+          <div>
+            <h4>Systèmes</h4>
+            <ul>
+              <li>Linux (Debian/Ubuntu), Windows Server</li>
+              <li>Virtualisation (Proxmox, VMware ESXi)</li>
+              <li>Scripting (Bash, PowerShell)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Réseaux</h4>
+            <ul>
+              <li>Routage & VLAN (Cisco)</li>
+              <li>Services (DNS, DHCP, HTTP, SSH)</li>
+              <li>Supervision (Zabbix)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sécurité</h4>
+            <ul>
+              <li>Durcissement OS / TLS</li>
+              <li>ACL / Firewall</li>
+              <li>Sauvegarde & PRA</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="parcours" class="section container">
+        <h2>Parcours</h2>
+        <ul class="timeline">
+          <li>
+            <span class="time">2025 — aujourd’hui</span>
+            <div class="content"><strong>BTS SIO — option SISR</strong> : infrastructure, réseaux, sécurité, projets tutorés.</div>
+          </li>
+          <li>
+            <span class="time">Stages</span>
+            <div class="content">Administration systèmes/réseaux, documentation, support N2.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section container">
+        <h2>Contact</h2>
+        <p>Envie d'échanger ?</p>
+        <ul class="contact-list">
+          <li>Email : <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></li>
+          <li>GitHub : <a href="https://github.com/votre-login" target="_blank" rel="noopener">votre-login</a></li>
+          <li>LinkedIn : <a href="https://www.linkedin.com/in/votre-profil" target="_blank" rel="noopener">votre-profil</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Mon Portfolio — Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
