@@ -159,3 +159,28 @@ body{
   box-shadow: var(--shadow);
 }
 .theme-toggle:hover{ transform: translateY(-1px); }
+/* === Ajustement du bouton de thème dans la navigation === */
+
+/* On aligne les liens et le bouton sur une seule ligne */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espace entre les liens */
+}
+
+/* Bouton clair/sombre à droite */
+.nav .theme-toggle {
+  margin-left: auto; /* pousse le bouton à droite */
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nav .theme-toggle:hover {
+  transform: scale(1.1);
+  color: var(--accent);
+}
+
