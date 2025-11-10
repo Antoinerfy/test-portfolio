@@ -282,5 +282,19 @@ body{
   .nav{ display: none; }
   .theme-toggle{ display: block; }
 }
+/* --- FIX: garder tout le header sur UNE LIGNE et enlever la marge des liens --- */
 
+/* 1) Enlever la marge gauche héritée sur les liens de la nav */
+.nav a { margin-left: 0 !important; }
+
+/* 2) Empêcher tout retour à la ligne entre nav et bouton */
+.header-inner{ display: grid !important; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; }
+.nav-group{ display: flex !important; align-items: center; gap: 16px; flex-wrap: nowrap !important; min-width: 0; }
+
+/* 3) Garder les liens sur une seule ligne (pas de wrap) */
+.nav{ display: flex !important; align-items: center; gap: 16px; flex-wrap: nowrap !important; min-width: 0; }
+.nav a{ white-space: nowrap; }
+
+/* Le bouton ne rétrécit pas et reste à droite */
+.theme-toggle{ flex: 0 0 auto; margin-left: 0 !important; }
 
