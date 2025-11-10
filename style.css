@@ -79,46 +79,83 @@ body {
   .nav { display: none; }
   .timeline li { grid-template-columns: 1fr; }
 }
-/* === Mode clair/sombre === */
+/* ===== Thèmes light / dark ===== */
 
-/* Bouton du thème */
-.theme-toggle {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: inherit;
-  transition: transform 0.2s;
-}
-.theme-toggle:hover {
-  transform: scale(1.2);
+/* DARK par défaut */
+:root[data-theme="dark"]{
+  --bg: #0a0b10;
+  --panel: #111319;
+  --text: #e8ecf1;
+  --muted: #9aa4b2;
+  --accent: #6ee7b7;
+  --accent-2: #60a5fa;
+  --shadow: 0 10px 30px rgba(0,0,0,0.25);
+  --border: rgba(255,255,255,0.08);
+  --hairline: rgba(255,255,255,0.06);
+  --card: var(--panel);
 }
 
-/* Thème clair */
-:root[data-theme="light"] {
+/* LIGHT */
+:root[data-theme="light"]{
   --bg: #ffffff;
-  --text: #0f172a;
-  --card: #f1f5f9;
+  --panel: #f6f7fb;
+  --text: #0b1220;
+  --muted: #5b6777;
   --accent: #0ea5e9;
+  --accent-2: #22c55e;
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+  --border: rgba(0,0,0,0.08);
+  --hairline: rgba(0,0,0,0.06);
+  --card: #ffffff;
 }
 
-/* Thème sombre */
-:root[data-theme="dark"] {
-  --bg: #0f172a;
-  --text: #f1f5f9;
-  --card: #1e293b;
-  --accent: #38bdf8;
-}
-
-/* Appliquer les variables */
-body {
-  background-color: var(--bg);
+/* Appliquer les variables aux éléments clés */
+body{
+  background: var(--bg);
   color: var(--text);
 }
-.card {
-  background-color: var(--card);
-}
-a, .btn {
-  color: var(--accent);
+
+/* Remplace l’ancien gradient pour respecter le thème */
+body{
+  background: var(--bg) !important;
 }
 
+.site-header{
+  background: color-mix(in oklab, var(--panel) 70%, transparent);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.btn{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn.primary{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0b0c10;
+  border: none;
+}
+
+.nav a{ color: var(--muted); }
+.nav a:hover,.nav a.active{ color: var(--text); }
+
+/* Footer & séparateurs */
+.site-footer{ border-top: 1px solid var(--hairline); color: var(--muted); }
+
+/* Bouton toggle */
+.theme-toggle{
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  box-shadow: var(--shadow);
+}
+.theme-toggle:hover{ transform: translateY(-1px); }
