@@ -183,4 +183,53 @@ body{
   transform: scale(1.1);
   color: var(--accent);
 }
+/* === Alignement du bouton de thème à droite === */
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Groupe nav + bouton à droite */
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espace entre nav et bouton */
+}
+
+/* Navigation en ligne */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espace entre les liens */
+}
+
+/* Bouton clair/sombre */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, color 0.2s;
+}
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  color: var(--accent);
+}
+
+/* Mobile : nav cachée, bouton visible */
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+  .theme-toggle {
+    display: block;
+  }
+}
 
