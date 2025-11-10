@@ -170,7 +170,7 @@ body{
 
 /* Bouton clair/sombre à droite */
 .nav .theme-toggle {
-  margin-left: 3rem; /* pousse le bouton à droite */
+  margin-left: 30rem; /* pousse le bouton à droite */
   background: transparent;
   border: none;
   font-size: 1.3rem;
