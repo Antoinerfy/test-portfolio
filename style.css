@@ -79,3 +79,46 @@ body {
   .nav { display: none; }
   .timeline li { grid-template-columns: 1fr; }
 }
+/* === Mode clair/sombre === */
+
+/* Bouton du thème */
+.theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: inherit;
+  transition: transform 0.2s;
+}
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Thème clair */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card: #f1f5f9;
+  --accent: #0ea5e9;
+}
+
+/* Thème sombre */
+:root[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --card: #1e293b;
+  --accent: #38bdf8;
+}
+
+/* Appliquer les variables */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+.card {
+  background-color: var(--card);
+}
+a, .btn {
+  color: var(--accent);
+}
+
