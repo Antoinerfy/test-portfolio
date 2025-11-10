@@ -298,3 +298,38 @@ body{
 /* Le bouton ne rétrécit pas et reste à droite */
 .theme-toggle{ flex: 0 0 auto; margin-left: 0 !important; }
 
+/* === FIX: header centré, nav à droite, rien de collé à gauche === */
+.container{ margin-inline:auto !important; }  /* s'assure du centrage du conteneur */
+
+.header-inner{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important; /* logo à gauche, nav+bouton à droite */
+  gap:12px;
+}
+
+.nav-group{
+  display:flex !important;
+  align-items:center !important;
+  gap:16px;
+  flex-wrap:nowrap !important;
+  margin-left:auto !important;  /* pousse le groupe à droite */
+  min-width:0;
+}
+
+.nav{
+  display:flex !important;
+  align-items:center !important;
+  gap:16px;                    /* espace entre les liens */
+  flex-wrap:nowrap !important; /* évite le retour à la ligne */
+  min-width:0;
+}
+
+/* enlève l’ancienne marge qui cassait la ligne */
+.nav a{ margin-left:0 !important; white-space:nowrap; }
+
+/* le bouton reste compact et à droite */
+.theme-toggle{
+  flex:0 0 auto;
+  margin-left:0 !important;
+}
