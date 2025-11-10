@@ -140,10 +140,41 @@
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    
+    <!-- Forcer le retour en haut au rechargement -->
     <script>
-      window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-      };
-    </script>
-  </body>
+      (function () {
+    // Empêcher la restauration automatique du scroll par le navigateur
+      if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Si l’URL contient un hash (#projets...), on l’enlève
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+
+    // Remonter en haut au chargement (y compris via BFCache)
+    const toTop = () => window.scrollTo(0, 0);
+    window.addEventListener('load', toTop);
+    window.addEventListener('pageshow', toTop);
+    window.addEventListener('beforeunload', toTop);
+    })();
+  </script>
+
+  <!-- (Optionnel) Navigation sans hash, avec défilement fluide -->
+  <script>
+  document.querySelectorAll('nav a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', location.pathname + location.search);
+        }
+      });
+    });
+  </script>
+
+    </body>
 </html>
