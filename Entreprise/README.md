@@ -15,7 +15,7 @@ En tant que technicien SDK :
 Je récupère les informations fournies dans le ticket.
 J’accède à la console Active Directory (AD) pour ajouter les utilisateurs concernés au groupe de sécurité lié au dossier partagé.
 Je m’assure que les permissions NTFS et les partages réseau sont correctement configurés sur le serveur.
-Je vérifie l’accessibilité du chemin depuis un poste utilisateur.
+Je vérifie l’accessibilité du chemin depuis un poste utilisateur. 
 ✅ Résultat
 Une fois le traitement terminé, les utilisateurs ciblés peuvent accéder au dossier via l’explorateur de fichiers à l’aide du chemin réseau fourni.
 L’accès est sécurisé, centralisé et conforme aux bonnes pratiques de gestion des droits.
