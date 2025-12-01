@@ -6,3 +6,13 @@ Ce TP m’a permis de mettre en œuvre un adressage IP utilisant des masques CID
 - Déterminer les plages d’adresses selon des masques CIDR (/25 à /30)
 - Configurer les interfaces IP des hôtes et des routeurs
 - Vérifier la communication entre les différents réseaux
+  
+## 🧩 TP 2 – Subnetting Scenario
+
+Ce TP m’a permis de concevoir un plan d’adressage IP complet à partir du réseau 192.168.100.0/24, en le divisant en plusieurs sous-réseaux adaptés aux besoins de la topologie. J’ai calculé les sous-réseaux nécessaires pour supporter au moins 25 hôtes par LAN et adressé chaque segment du réseau (LAN et liaison WAN). J’ai ensuite attribué les adresses IP aux routeurs, commutateurs et PC avant de vérifier la connectivité de l’infrastructure.
+
+### ✅ Objectifs atteints
+- Créer plusieurs sous-réseaux à partir du réseau 192.168.100.0/24
+- Définir les adresses réseau, premières/dernières adresses hôte et adresses de broadcast
+- Attribuer un schéma d’adressage cohérent aux routeurs, commutateurs et hôtes
+- Vérifier la connectivité entre les différents sous-réseaux
